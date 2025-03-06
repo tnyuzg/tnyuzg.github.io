@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Homepage</title>
-    <link rel="icon" href="image/cat.jpg" type="image/jpeg">
+    <link rel="icon" href="image/cat.ico" type="image/x-icon">
     <style>
         body { max-width: 900px; margin: auto; padding: 20px; font-family: serif; line-height: 1.6; }
         .about-container { display: flex; align-items: center; justify-content: space-between; }
@@ -28,7 +28,7 @@
             var content = document.getElementById(id);
             var isHidden = content.style.display === "none" || content.style.display === "";
             content.style.display = isHidden ? "block" : "none";
-            element.textContent = isHidden ? "▼ " + element.textContent.slice(2) : "▶ " + element.textContent.slice(2);
+            element.textContent = isHidden ? "▼  " + element.textContent.slice(2) : "▶ " + element.textContent.slice(2);
         }
     </script>
 
@@ -50,19 +50,19 @@
     <h2>Publications</h2>
     
     <div class="publication">
-        <strong>HasteBoots: Proving FHE Bootstrapping in Seconds</strong> [<a href="https://eprint.iacr.org/2025/261.pdf">paper</a>] <br> 
-        <em><a href="https://f7ed.com">Fengrun Liu</a>, Haofei Liang, <u>Tianyu Zhang</u>, <a href="https://huyuncong.com">Yuncong Hu</a>, <a href="https://xiangxiecrypto.github.io">Xiang Xie</a>, Haisheng Tan, <a href="http://yuyu.hk">Yu Yu</a></em><br>
-        (In submission)<br>
+        <strong>
+        
     
         
     </div>
 
     <div class="publication">
-        <span class="toggle" onclick="toggleContent('pub1', this)">▶ Scalable Multi-party Computation Protocols for Machine Learning in the Honest-Majority Setting</span>
+        <span class="toggle" onclick="toggleContent('pub1', this)">
+            ▶ HasteBoots: Proving FHE Bootstrapping in Seconds</strong> [<a href="https://eprint.iacr.org/2025/261.pdf">paper</a>] <br> 
+            <em><a href="https://f7ed.com">Fengrun Liu</a>, Haofei Liang, <u>Tianyu Zhang</u>, <a href="https://huyuncong.com">Yuncong Hu</a>, <a href="https://xiangxiecrypto.github.io">Xiang Xie</a>, Haisheng Tan, <a href="http://yuyu.hk">Yu Yu</a></em><br>
+        (In submission)<br>
         <div id="pub1" class="content">
-            <em>Fengrun Liu, <a href="#">Xiang Xie</a>, <a href="#">Yu Yu</a></em><br>
-            <em>USENIX Security 2024</em> (Accepted in 09/2023)<br>
-            [<a href="#">paper</a>] [<a href="#">code</a>] [<a href="#">video</a>]
+            vfhe
         </div>
     </div>
 
