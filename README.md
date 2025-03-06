@@ -1,1 +1,0 @@
-# tnyuzg.github.io
