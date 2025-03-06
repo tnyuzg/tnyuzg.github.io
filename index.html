@@ -13,7 +13,22 @@
         a { color: blue; text-decoration: none; }
         a:hover { text-decoration: underline; }
         ul { padding-left: 20px; }
+        .publication { margin-bottom: 20px; }
+        .publication strong { font-size: 18px; }
+        .publication a { margin-right: 10px; }
+        .toggle { cursor: pointer; font-weight: bold; }
+        .content { display: none; margin-left: 20px; }
+        
     </style>
+    <script>
+        function toggleContent(id, element) {
+            var content = document.getElementById(id);
+            var isHidden = content.style.display === "none" || content.style.display === "";
+            content.style.display = isHidden ? "block" : "none";
+            element.innerText = isHidden ? "▼ " + element.innerText.slice(2) : "▶ " + element.innerText.slice(2);
+        }
+    </script>
+
 </head>
 <body>
     <header>
@@ -27,7 +42,7 @@
     <h2>Education</h2>
     <p>B.Sc., Shanghai Jiao Tong University, 2021-2025, advised by Prof. Yu Yu</p>
     
-    <h2>Publication</h2>
+    <h2>Publications</h2>
     
     <div class="publication">
         <strong>HasteBoots: Proving FHE Bootstrapping in Seconds</strong> [<a href="https://eprint.iacr.org/2025/261.pdf">paper</a>] <br> 
@@ -35,6 +50,15 @@
         (In submission)<br>
     
         
+    </div>
+
+    <div class="publication">
+        <span class="toggle" onclick="toggleContent('pub1')">▶ Scalable Multi-party Computation Protocols for Machine Learning in the Honest-Majority Setting</span>
+        <div id="pub1" class="content">
+            <em>Fengrun Liu, <a href="#">Xiang Xie</a>, <a href="#">Yu Yu</a></em><br>
+            <em>USENIX Security 2024</em> (Accepted in 09/2023)<br>
+            [<a href="#">paper</a>] [<a href="#">code</a>] [<a href="#">video</a>]
+        </div>
     </div>
 
     <a href="https://mapmyvisitors.com/web/1bxs5"  title="Visit tracker"><img src="https://mapmyvisitors.com/map.png?d=FtUdLRtU5_IUma_g6SQ6pfZabTo-l09PRKkLe52CeyU&cl=ffffff" /></a>
