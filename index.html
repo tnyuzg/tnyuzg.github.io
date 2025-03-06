@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Homepage</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="image/cat.jpg" type="image/jpeg">
     <style>
-        body { max-width: 800px; margin: auto; padding: 20px; font-family: serif; line-height: 1.6; }
-        img { width: 120px; border-radius: 50%; float: left; margin-right: 20px; }
+        body { max-width: 900px; margin: auto; padding: 20px; font-family: serif; line-height: 1.6; }
+        .about-container { display: flex; align-items: center; justify-content: space-between; }
+        .about-text { flex: 1; padding-right: 20px; }
+        .about-container img { width: 250px; height: auto; object-fit: cover; }
+        img { object-fit: cover; }
         h1 { font-size: 24px; }
         h2 { font-size: 20px; margin-top: 20px; }
         a { color: blue; text-decoration: none; }
@@ -31,16 +34,18 @@
 
 </head>
 <body>
-    <header>
-        <img src="image/me_with_gun.jpg" alt="Your Photo"> 
-        <h1>Tianyu Zhang 张天宇</h1>
-        <p> I am interested in cryptography, particularly proof systems right now.</p>
-        <p>email: <a href="mailto:tnyuzg@gmail.com">tnyuzg@gmail.com</a> </p>
-    </header>
-    
+
+    <div class="about-container">
+        <div class="about-text">
+            <h1>Tianyu Zhang 张天宇</h1>
+            <p> I am interested in cryptography, particularly proof systems right now.</p>
+            <p>email: <a href="mailto:tnyuzg@gmail.com">tnyuzg@gmail.com</a> </p>
+        </div>
+        <img src="image/me_with_gun.jpg" alt="my_photo">
+    </div>
     
     <h2>Education</h2>
-    <p>B.Sc., Shanghai Jiao Tong University, 2021-2025, advised by Prof. Yu Yu</p>
+    <p>2021-2025, B.Sc., Shanghai Jiao Tong University, advised by Prof. Yu Yu</p>
     
     <h2>Publications</h2>
     
@@ -61,6 +66,8 @@
         </div>
     </div>
 
-    <a href="https://mapmyvisitors.com/web/1bxs5"  title="Visit tracker"><img src="https://mapmyvisitors.com/map.png?d=FtUdLRtU5_IUma_g6SQ6pfZabTo-l09PRKkLe52CeyU&cl=ffffff" /></a>
+    <a href="https://mapmyvisitors.com/web/1bxs5"  title="Visit tracker"><img src="https://mapmyvisitors.com/map.png?d=FtUdLRtU5_IUma_g6SQ6pfZabTo-l09PRKkLe52CeyU&cl=ffffff" /></a> <br>
+
+    Actually, I am the one with the gun instead of the graduate cap. May have some implicature, who knows.
 </body>
 </html>
