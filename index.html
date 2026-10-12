@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tianyu Zhang - CS Ph.D. Student at UIUC</title>
-    <meta name="description" content="Tianyu Zhang is a Ph.D. student in computer science at the University of Illinois Urbana-Champaign (UIUC), advised by Prof. Yupeng Zhang. He works on cryptography, zero-knowledge proofs and zk-SNARKs, and AI safety.">
+    <meta name="description" content="Tianyu Zhang is a Ph.D. student in computer science at the University of Illinois Urbana-Champaign (UIUC), advised by Prof. Yupeng Zhang. He works on AI safety and cryptography, including zero-knowledge proofs and zk-SNARKs.">
     <meta name="author" content="Tianyu Zhang">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://tnyuzg.github.io/">
 
     <meta property="og:title" content="Tianyu Zhang - CS Ph.D. Student at UIUC">
-    <meta property="og:description" content="Ph.D. student in computer science at UIUC, advised by Prof. Yupeng Zhang. Cryptography, zero-knowledge proofs and zk-SNARKs, AI safety.">
+    <meta property="og:description" content="Ph.D. student in computer science at UIUC, advised by Prof. Yupeng Zhang. AI safety, cryptography, zero-knowledge proofs and zk-SNARKs.">
     <meta property="og:image" content="https://tnyuzg.github.io/image/night.jpg">
     <meta property="og:url" content="https://tnyuzg.github.io/">
     <meta property="og:type" content="profile">
@@ -29,7 +29,7 @@
       "image": "https://tnyuzg.github.io/image/night.jpg",
       "email": "mailto:tianyuz@illinois.edu",
       "jobTitle": "Ph.D. Student in Computer Science",
-      "description": "Ph.D. student in computer science at the University of Illinois Urbana-Champaign, working on cryptography, zero-knowledge proofs and zk-SNARKs, and AI safety.",
+      "description": "Ph.D. student in computer science at the University of Illinois Urbana-Champaign, working on AI safety and cryptography, including zero-knowledge proofs and zk-SNARKs.",
       "affiliation": {
         "@type": "CollegeOrUniversity",
         "name": "University of Illinois Urbana-Champaign",
@@ -48,98 +48,152 @@
     }
     </script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap">
+
     <style>
-        body { max-width: 900px; margin: auto; padding: 20px; font-family: serif; line-height: 1.6; }
-        .about-container { display: flex; align-items: center; justify-content: space-between; }
-        .about-text { flex: 1; padding-right: 20px; }
-        .about-container img { width: 250px; height: auto; object-fit: cover; }
-        img { object-fit: cover; }
-        h1 { font-size: 24px; }
-        h2 { font-size: 20px; margin-top: 36px; }
-        a { color: #00007272; text-decoration: none; }
+        *, *::before, *::after { box-sizing: border-box; }
+        body { font-family: "Source Serif 4", Georgia, serif; font-size: 16.5px; line-height: 1.6; color: #1f1f1f;
+               max-width: 860px; margin: 0 auto; padding: 48px 20px 64px; background: #fff; }
+        img { max-width: 100%; }
+        a { color: #1772d0; text-decoration: none; }
         a:hover { text-decoration: underline; }
-        ul { padding-left: 20px; }
-        .publication { margin-bottom: 22px; }
-        .publication .title { font-size: 18px; font-weight: bold; }
-        .publication .meta a { margin-right: 6px; }
-        .publication .authors { color: #555; }
-        .publication .authors b { color: #000; }
-        .epigraph { margin: 2px 0 0 20px; color: #555; }
-        .toggle { cursor: pointer; font-weight: bold; }
-        .content { display: none; margin-left: 20px; }
-    </style>
-    <script>
-        function toggleContent(id, element) {
-            var content = document.getElementById(id);
-            var isHidden = content.style.display === "none" || content.style.display === "";
-            content.style.display = isHidden ? "block" : "none";
-            element.textContent = isHidden ? "▼  " + element.textContent.slice(2) : "▶ " + element.textContent.slice(2);
+        sup { line-height: 0; }
+
+        /* header */
+        .hero { display: flex; gap: 40px; align-items: center; }
+        .intro { flex: 1; }
+        .photo { width: 210px; flex: none; }
+        h1 { font-size: 32px; font-weight: 700; margin: 0 0 12px; }
+        .cn { font-weight: 400; color: #666; margin-left: .2em; }
+
+        /* section headings */
+        h2 { font-size: 21px; font-weight: 700; font-variant: small-caps; letter-spacing: .06em; margin: 44px 0 14px; }
+        h3 { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 700; text-transform: uppercase;
+             letter-spacing: .1em; color: #777; margin: 24px 0 14px; }
+        h3::after { content: ""; flex: 1; height: 1px; background: #e3e3e3; }
+
+        /* dated rows: education, experience, talks, awards, service */
+        .rows { display: grid; grid-template-columns: 180px 1fr; gap: 8px 24px; }
+        .row { display: contents; }
+        .when { color: #666; font-weight: 700; font-size: 14.5px; padding-top: 1px; }
+
+        /* publications: venue and motto on the left, paper on the right */
+        .pub { display: grid; grid-template-columns: 180px 1fr; gap: 24px; margin-bottom: 22px; }
+        .venue { border-left: 3px solid #1f1f1f; padding-left: 10px; }
+        .v-name { font-weight: 700; font-size: 14.5px; }
+        .v-note { font-size: 13px; color: #b54708; font-weight: 700; }
+        .v-quote { font-size: 14px; line-height: 1.45; color: #666; margin: 10px 0 0 13px; }
+        .title { font-weight: 700; font-size: 18px; margin-bottom: 3px; }
+        .authors { color: #6b6b6b; font-size: 14.5px; }
+        .authors b { color: #1f1f1f; font-weight: 600; }
+        .links { font-size: 14px; }
+
+
+        @media (max-width: 640px) {
+            .hero { flex-direction: column-reverse; align-items: flex-start; gap: 20px; }
+            .photo { width: 160px; }
+            .pub, .rows { grid-template-columns: 1fr; gap: 4px; }
+            .pub { margin-bottom: 26px; }
+            .row { display: block; margin-bottom: 8px; }
         }
-    </script>
+    </style>
 
 </head>
 <body>
 
-    <div class="about-container">
-        <div class="about-text">
-            <h1>Tianyu Zhang 张天宇</h1>
-            <p> I am a Ph.D. student in Computer Science at the University of Illinois Urbana-Champaign (UIUC),
+    <header class="hero">
+        <div class="intro">
+            <h1>Tianyu Zhang <span class="cn">张天宇</span></h1>
+            <p>I am a Ph.D. student in Computer Science at the University of Illinois Urbana-Champaign (UIUC),
                 advised by <a href="https://zhangyp.web.illinois.edu">Prof. Yupeng Zhang</a>.
-                I am interested in cryptography and AI safety.</p>
-            <p> Email: <a href="mailto:tianyuz@illinois.edu">tianyuz@illinois.edu</a> </p>
-            <p> <a href="https://scholar.google.com/citations?user=cQbbysIAAAAJ">Google Scholar</a> </p>
+                I am interested in AI safety and cryptography.</p>
+            <p><a href="mailto:tianyuz@illinois.edu">tianyuz@illinois.edu</a> · <a href="https://scholar.google.com/citations?user=cQbbysIAAAAJ">Google Scholar</a></p>
         </div>
-        <img src="image/night.jpg" alt="Tianyu Zhang, Ph.D. student in computer science at UIUC">
-    </div>
-    
+        <img class="photo" src="image/night.jpg" alt="Tianyu Zhang, Ph.D. student in computer science at UIUC">
+    </header>
+
     <h2>Education</h2>
-    <p>2025-Present: Ph.D. in Computer Science, University of Illinois Urbana-Champaign, advised by <a href="https://zhangyp.web.illinois.edu">Prof. Yupeng Zhang</a></p>
-    <p>2021-2025: B.S. in Computer Science (John Hopcroft Class), Shanghai Jiao Tong University, advised by <a href="http://yuyu.hk">Prof. Yu Yu</a></p>
+    <div class="rows">
+        <div class="row"><div class="when">2025–Present</div><div class="what">Ph.D. in Computer Science, University of Illinois Urbana-Champaign, advised by <a href="https://zhangyp.web.illinois.edu">Prof. Yupeng Zhang</a></div></div>
+        <div class="row"><div class="when">2021–2025</div><div class="what">B.S. in Computer Science (John Hopcroft Class), Shanghai Jiao Tong University, advised by <a href="http://yuyu.hk">Prof. Yu Yu</a></div></div>
+    </div>
 
     <h2>Experience</h2>
-    <p>May-August 2026: Research Intern, <a href="https://research.cloudflare.com">Cloudflare Research</a>, working on anonymous credentials</p>
+    <div class="rows">
+        <div class="row"><div class="when">May–Aug 2026</div><div class="what">Research Intern, <a href="https://research.cloudflare.com">Cloudflare Research</a>, working on anonymous credentials</div></div>
+    </div>
 
     <h2>Publications</h2>
 
-    <div class="publication">
-        <div class="title">Nenya: Efficient zkSNARK for Integer Rings Z/2<sup>k</sup>Z via Reverse Multiplication-Friendly Embeddings</div>
-        <div class="meta"><span class="venue">[IEEE S&amp;P 2027]</span></div>
-        <div class="authors"><b>Tianyu Zhang</b>, Nikita Borisov, Yupeng Zhang</div>
-        <p class="epigraph">💍 <em>“God made the integers; all else is the work of man.”</em></p>
+    <h3>AI Safety</h3>
+
+    <div class="pub">
+        <div class="left">
+            <div class="venue"><div class="v-name">NeurIPS 2026</div><div class="v-note">E&amp;D Track, Oral</div></div>
+            <div class="v-quote">🤐 <em>“Whereof one cannot speak, thereof one must be silent.”</em></div>
+        </div>
+        <div class="body">
+            <div class="title">AgentAbstain: Do LLM Agents Know When Not to Act?</div>
+            <div class="authors">Xun Liu<sup title="project lead">†</sup>, Yi Evie Zhang<sup title="project lead">†</sup>, Vira Kasprova<sup title="equal contribution">*</sup>, Parisa Rabbani<sup title="equal contribution">*</sup>, Pardis Sadat Zahraei<sup title="equal contribution">*</sup>, <b>Tianyu Zhang</b><sup title="equal contribution">*</sup>, Ali Ebrahimpour-Boroojeny, Varun Chandrasekaran</div>
+            <div class="links"><a href="https://arxiv.org/abs/2607.10059">paper</a> · <a href="https://agentabstain.github.io/">project</a> · <a href="https://github.com/AntiQuality/agentabstain">code</a> · <a href="https://huggingface.co/datasets/antiquality/agentabstain">data</a></div>
+        </div>
     </div>
 
-    <div class="publication">
-        <div class="title">AgentAbstain: Do LLM Agents Know When Not to Act?</div>
-        <div class="meta"><span class="venue">[NeurIPS 2026 E&amp;D Track, Oral]</span> <a href="https://arxiv.org/abs/2607.10059">[paper]</a> <a href="https://agentabstain.github.io/">[project]</a> <a href="https://github.com/AntiQuality/agentabstain">[code]</a> <a href="https://huggingface.co/datasets/antiquality/agentabstain">[data]</a></div>
-        <div class="authors">Xun Liu, Yi Evie Zhang, Vira Kasprova, Parisa Rabbani, Pardis Sadat Zahraei, <b>Tianyu Zhang</b>, Ali Ebrahimpour-Boroojeny, Varun Chandrasekaran</div>
-        <p class="epigraph">🤐 <em>“Whereof one cannot speak, thereof one must be silent.”</em></p>
+    <h3>Cryptography</h3>
+
+    <div class="pub">
+        <div class="left">
+            <div class="venue"><div class="v-name">IEEE S&amp;P 2027</div></div>
+            <div class="v-quote">💍 <em>“God made the integers; all else is the work of man.”</em></div>
+        </div>
+        <div class="body">
+            <div class="title">Nenya: Efficient zkSNARK for Integer Rings Z/2<sup>k</sup>Z via Reverse Multiplication-Friendly Embeddings</div>
+            <div class="authors"><b>Tianyu Zhang</b>, Nikita Borisov, Yupeng Zhang</div>
+        </div>
     </div>
 
-    <div class="publication">
-        <div class="title">Dynark: Making Groth16 Dynamic</div>
-        <div class="meta"><span class="venue">[EUROCRYPT 2026]</span> <a href="https://eprint.iacr.org/2025/1897">[paper]</a></div>
-        <div class="authors"><b>Tianyu Zhang</b>, Yupeng Ouyang, Yupeng Zhang</div>
-        <p class="epigraph">⛵ <em>“Plank by plank, still the ship of Theseus.”</em></p>
+    <div class="pub">
+        <div class="left">
+            <div class="venue"><div class="v-name">EUROCRYPT 2026</div></div>
+            <div class="v-quote">⛵ <em>“Plank by plank, still the ship of Theseus.”</em></div>
+        </div>
+        <div class="body">
+            <div class="title">Dynark: Making Groth16 Dynamic</div>
+            <div class="authors"><b>Tianyu Zhang</b>, Yupeng Ouyang, Yupeng Zhang</div>
+            <div class="links"><a href="https://eprint.iacr.org/2025/1897">paper</a></div>
+        </div>
     </div>
 
-    <div class="publication">
-        <div class="title">FairZK: A Scalable System to Prove Machine Learning Fairness in Zero-Knowledge</div>
-        <div class="meta"><span class="venue">[IEEE S&amp;P 2025]</span> <a href="https://arxiv.org/abs/2505.07997">[paper]</a> <a href="https://github.com/tnyuzg/FairZK">[code]</a></div>
-        <div class="authors"><b>Tianyu Zhang</b>, Shen Dong, O. Deniz Kose, Yanning Shen, Yupeng Zhang</div>
-        <p class="epigraph">⚖️ <em>“Justice is blind.”</em></p>
+    <div class="pub">
+        <div class="left">
+            <div class="venue"><div class="v-name">IEEE S&amp;P 2025</div></div>
+            <div class="v-quote">⚖️ <em>“Justice is blind.”</em></div>
+        </div>
+        <div class="body">
+            <div class="title">FairZK: A Scalable System to Prove Machine Learning Fairness in Zero-Knowledge</div>
+            <div class="authors"><b>Tianyu Zhang</b><sup title="equal contribution">*</sup>, Shen Dong<sup title="equal contribution">*</sup>, O. Deniz Kose<sup title="equal contribution">*</sup>, Yanning Shen, Yupeng Zhang</div>
+            <div class="links"><a href="https://arxiv.org/abs/2505.07997">paper</a> · <a href="https://github.com/tnyuzg/FairZK">code</a></div>
+        </div>
     </div>
 
     <h2>Talks</h2>
-    <ul>
-        <li><b>Dynark:</b> UIUC S&amp;P Seminar, SJTU, NYU Crypto Seminar, EUROCRYPT 2026</li>
-        <li><b>FairZK:</b> 10th Midwest Security Workshop (MSW 2025), SJTU</li>
-    </ul>
+    <div class="rows">
+        <div class="row"><div class="when">Dynark</div><div class="what">UIUC S&amp;P Seminar, SJTU, NYU Crypto Seminar, EUROCRYPT 2026</div></div>
+        <div class="row"><div class="when">FairZK</div><div class="what">10th Midwest Security Workshop (MSW 2025), SJTU</div></div>
+    </div>
 
     <h2>Awards</h2>
-    <p>2022-2023: National Scholarship</p>
+    <div class="rows">
+        <div class="row"><div class="when">2025</div><div class="what">Outstanding Graduate of Shanghai</div></div>
+        <div class="row"><div class="when">2022–2023</div><div class="what">National Scholarship</div></div>
+    </div>
 
     <h2>Service</h2>
-    <p>Subreviewer: EUROCRYPT 2026, IEEE S&amp;P 2027</p>
+    <div class="rows">
+        <div class="row"><div class="when">Subreviewer</div><div class="what">EUROCRYPT 2026, IEEE S&amp;P 2027</div></div>
+    </div>
 
     <h2>Miscellaneous</h2>
         <p>
