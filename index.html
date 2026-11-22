@@ -63,7 +63,7 @@
 
         /* header */
         .hero { display: flex; gap: 40px; align-items: center; }
-        .intro { flex: 1; }
+        .intro p { font-size: 18px; line-height: 2; }
         .photo { width: 210px; flex: none; margin: 0; }
         .photo img { display: block; width: 100%; }
         .photo figcaption { font-size: 13px; color: #888; text-align: center; margin-top: 6px; }
@@ -96,6 +96,7 @@
         @media (max-width: 640px) {
             .hero { flex-direction: column-reverse; align-items: flex-start; gap: 20px; }
             .photo { width: 160px; }
+            .intro p { font-size: inherit; line-height: 1.7; }
             .pub, .rows { grid-template-columns: 1fr; gap: 4px; }
             .pub { margin-bottom: 26px; }
             .row { display: block; margin-bottom: 8px; }
